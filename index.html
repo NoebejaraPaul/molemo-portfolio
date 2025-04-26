@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molemo | Portfolio</title>
+    <style>
+        /* Modern Color Scheme */
+        :root {
+            --primary: #2563EB;
+            --secondary: #1E40AF;
+            --accent: #F59E0B;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+            --gray: #6B7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+/* Hero Section */
+.hero {
+    padding: 120px 0 80px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, var(--light), #EFF6FF);
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    color: var(--primary-color); /* Customize your primary color */
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: var(--gray);
+    margin-bottom: 2.5rem;
+}
+
+.btn-connect {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+
+
+        .about-section {
+        padding: 6rem 0;
+        background: white;
+    }
+
+    .about-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .about-content h3 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: var(--primary);
+    }
+
+    .about-content p {
+        color: var(--gray);
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+    }
+
+    .about-content ul {
+        list-style: none;
+        padding-left: 1.5rem;
+    }
+
+    .about-content li {
+        margin-bottom: 0.8rem;
+        position: relative;
+    }
+
+    .about-content li::before {
+        content: "▹";
+        color: var(--accent);
+        position: absolute;
+        left: -1.5rem;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    }
+
+
+        /* Skills Section */
+        .skills-section {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .skills-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Hobbies Section */
+        .hobbies-section {
+            padding: 6rem 0;
+            background: #EFF6FF;
+        }
+
+        .hobbies-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .hobby-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 6rem 0;
+        }
+
+        .portfolio-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-info {
+            padding: 1.5rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 6rem 0;
+            background: var(--dark);
+            color: white;
+        }
+
+        .testimonials-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 6rem 0;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #E5E7EB;
+            border-radius: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .skills-grid,
+            .hobbies-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-container {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+        
+        .about-content ul {
+            padding-left: 0;
+        }
+        
+        .about-content li::before {
+            display: none;
+        }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Molaeeng Tlali</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#skills">Skills</a>
+                <a href="#hobbies">Hobbies</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Molemo Molaeeng Tlali</h1>
+                <p>Media Personality | Storyteller | Advocate for Youth Empowerment</p>
+                <a href="#contact" class="btn-connect">Let's Connect</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Add this right after the Hero section -->
+    <section class="about-section" id="about">
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>Get to know the person behind the code</p>
+        </div>
+        <div class="about-container">
+            
+            <div class="about-image">
+                <img src="about.jpg" alt="About Me" style="border-radius: 1rem;">
+            </div>
+            <div class="about-content">
+                <h3>Broadcast Journalist & Youth Advocate
+                </h3>
+                <p>A passionate media specialist with 10+ years experience across radio, television 
+                    and digital platforms. Currently presenting the Thahameso morning show while 
+                    completing my BA in Broadcasting & Journalism at Limkokwing University.</p>
+                <ul>
+                    <li><strong>Awards:</strong> UNESCO Youth Media Recognition
+                    </li>
+                    <li><strong>Education:</strong> B.S. in Computer Science</li>
+                    <li><strong>Expertise:</strong> Media Production & Content Creation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="section-title">
+            <h2>Skills</h2>
+            <p>A showcase of my core competencies and expertise</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fas fa-pen-nib skill-icon"></i>
+                <h3>Creative Writing</h3>
+                <p>Storytelling, Copywriting, Content Creation</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-video skill-icon"></i>
+                <h3>Video Editing</h3>
+                <p>Adobe Premiere Pro, Final Cut Pro, CapCut</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-code skill-icon"></i>
+                <h3>Web Development</h3>
+                <p>HTML, CSS, JavaScript, WordPress</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-share-alt skill-icon"></i>
+                <h3>Social Media Management</h3>
+                <p>Community Engagement</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Hobbies Section -->
+    <section class="hobbies-section" id="hobbies">
+        <div class="section-title">
+            <h2>My Hobbies</h2>
+            <p>What I enjoy doing in my free time</p>
+        </div>
+        <div class="hobbies-grid">
+            <div class="hobby-card">
+                <i class="fas fa-microphone-alt hobby-icon"></i>
+                <h3>Storytelling</h3>
+                <p>Sharing inspiring narratives through radio, blogs, and videos</p>
+            </div>
+            <div class="hobby-card">
+                <i class="fas fa-video hobby-icon"></i>
+                <h3>Content Creation</h3>
+                <p>Producing videos and podcasts on youth, media, and mental health</p>
+            </div>
+            <div class="hobby-card">
+                <i class="fas fa-globe hobby-icon"></i>
+                <h3>Community Engagement</h3>
+                <p>Championing youth empowerment and leading awareness initiatives</p>
+            </div>
+            <div class="hobby-card">
+                <i class="fas fa-pen hobby-icon"></i>
+                <h3>Blogging</h3>
+                <p>Writing about media trends, youth issues, and personal reflections</p>
+            </div>
+        </div>
+    </section>
+
+
+   <!-- Upcoming Projects Section -->
+<section class="projects-section" id="projects">
+    <div class="section-title">
+        <h2>Upcoming Projects</h2>
+        <p>Exciting initiatives I'm currently working on</p>
+    </div>
+    <div class="portfolio-grid">
+        <div class="portfolio-item">
+            <div class="portfolio-image">
+                <img src="yotube.jpg" alt="Mental Health Video Project">
+            </div>
+            <div class="portfolio-info">
+                <h3>YouTube Video</h3>
+                <p>Addressing mental health awareness in schools.</p>
+            </div>
+        </div>
+        <div class="portfolio-item">
+            <div class="portfolio-image">
+                <img src="blog.jpg" alt="Personal Blog Project">
+            </div>
+            <div class="portfolio-info">
+                <h3>Personal Blog</h3>
+                <p>Sharing stories, youth empowerment, and media insights.</p>
+            </div>
+        </div>
+        <div class="portfolio-item">
+            <div class="portfolio-image">
+                <img src="radio.jpg" alt="Radio Drama Project">
+            </div>
+            <div class="portfolio-info">
+                <h3>Radio Drama Series</h3>
+                <p>13-episode radio drama on illegal mining awareness.</p>
+            </div>
+        </div>
+       
+    </div>
+</section>
+
+
+   <!-- Recognition Section -->
+<section class="testimonials-section" id="testimonials">
+    <div class="section-title">
+        <h2>Recognition & Achievements</h2>
+        <p>Honoring the journey and milestones along the way</p>
+    </div>
+    <div class="testimonials-grid">
+        <div class="testimonial-card">
+            <p>"Recognized by Setsoto FM for outstanding work in media presentation and storytelling."</p>
+            <div class="testimonial-author">
+                <img src="radio.png" alt="Setsoto FM Recognition" class="author-image">
+                <div>
+                    <h4>Setsoto FM</h4>
+                    <p>Media Recognition Award</p>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card">
+            <p>"Acknowledged by UNESCO Lesotho Youth Desk for promoting youth empowerment through media."</p>
+            <div class="testimonial-author">
+                <img src="unesco.png" alt="UNESCO Lesotho Recognition" class="author-image">
+                <div>
+                    <h4>UNESCO Lesotho Youth Desk</h4>
+                    <p>Youth Empowerment Recognition</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ <!-- Contact Section -->
+<section class="contact-section" id="contact">
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Get In Touch</h2>
+            <p>Interested in collaborating or learning more? I’d love to hear from you!</p>
+            <div class="contact-details">
+                <p><i class="fas fa-envelope"></i> molaeengt@yahoo.com</p>
+                <p><i class="fas fa-phone"></i>  +266 59955857 / 63316540</p>
+                <p><i class="fas fa-map-marker-alt"></i>  #3rd Floor, Moposo House, Kingsway Road, Maseru</p>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </div>
+</section>
+
+</body>
+</html>
